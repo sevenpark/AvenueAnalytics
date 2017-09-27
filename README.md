@@ -27,6 +27,8 @@ compile 'com.google.android.gms:play-services-analytics:11.0.4'
 
 4. Initialize the SDK in your Application’s onCreate() method:
 ```java
+import com.youtility.datausage.AvenueAnalytics;
+
 public class YourApplication extends Application {
 
     @Override public void onCreate() {
