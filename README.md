@@ -49,7 +49,15 @@ if (AvenueAnalytics.hasUsageAccessSetting(context)) {
 }
 ```
 
-6. For ProGuard, adding this line in the config file to avoid optimization. This is important because ProGuard might remove some code which causes unpredictable issues.
+6. Permissions, there these permissions the apps must have in order to get system info, Target SDK is upper than 23 have to implement require permission run-time , see https://developer.android.com/training/permissions/requesting.html. 
+``` xml
+<uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+```
+
+7. For ProGuard, adding this line in the config file to avoid optimization. This is important because ProGuard might remove some code which causes unpredictable issues.
 ```
 -keep class com.youtility.datausage.** { *; }
 ```
