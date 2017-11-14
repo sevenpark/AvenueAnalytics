@@ -20,9 +20,6 @@ allprojects {
 compile(name: 'avenue-analytics', ext: 'aar')
 
 compile 'com.google.code.gson:gson:2.8.0'
-
-// if you use the library before 2017-11-01, you have to add this dependency, too.
-compile 'com.google.android.gms:play-services-basement:10.0.0'
 ```
 
 
