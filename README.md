@@ -48,10 +48,11 @@ if (AvenueAnalytics.hasUsageAccessSetting(context)) {
 
 6. If the Target SDK of the host app (your app) is higher than 23 the following permissions are required to get system info. To implement required run-time permission, please see https://developer.android.com/training/permissions/requesting.html. 
 ``` xml
+<uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 ```
 
 7. ProGuard may remove some portions of the SDK code during optimization which causes unpredictable issues in our data collection. To avoid that please add this line in the config file. 
