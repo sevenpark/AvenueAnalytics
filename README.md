@@ -37,7 +37,7 @@ public class YourApplication extends Application {
 }
 ```
 
-5. In order to properly collect data, the SDK (and therefore your app) needs Usage Access. You will need to prompt the user to grant this permission then launch the Usage Access info page with the following code:
+5. In order to properly collect data, the SDK (and therefore your app) needs Usage Access. To prompt the user to grant this permission launch the Usage Access info page with the following code:
 
 ```java
 if (AvenueAnalytics.hasUsageAccessSetting(context)) {
@@ -46,7 +46,7 @@ if (AvenueAnalytics.hasUsageAccessSetting(context)) {
 }
 ```
 
-6. Permissions, there these permissions the apps must have in order to get system info, Target SDK is upper than 23 have to implement require permission run-time , see https://developer.android.com/training/permissions/requesting.html. 
+6. Your app must have these permissions in order to get system info, if the Target SDK is higher than 23. To implement required run-time permission, please see https://developer.android.com/training/permissions/requesting.html. 
 ``` xml
 <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -54,7 +54,7 @@ if (AvenueAnalytics.hasUsageAccessSetting(context)) {
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 ```
 
-7. For ProGuard, adding this line in the config file to avoid optimization. This is important because ProGuard might remove some code which causes unpredictable issues.
+7. ProGuard may remove some code during optimization which causes unpredictable issues. To avoid that please add this line in the config file. 
 ```
 -keep class com.youtility.datausage.** { *; }
 ```
