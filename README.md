@@ -17,7 +17,7 @@ allprojects {
 
 3.  In your app level build.gradle files include the following lines:
 ```groovy
-compile(name: 'avenue-analytics', ext: 'aar')
+compile(name: 'avenue-analytics-5.3.4', ext: 'aar')
 
 compile 'com.google.code.gson:gson:2.8.0'
 ```
